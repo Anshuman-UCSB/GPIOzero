@@ -1,9 +1,13 @@
 from gpiozero import DigitalOutputDevice
+from time import sleep
 
-pin = 0
+pins = [0,2,3,4]
 
-gpio = DigitalOutputDevice(pin)
+gpio = {}
+for pin in pins:
+    gpio[pin] = DigitalOutputDevice()
 
-gpio.on()
+gpio[0].on()
+gpio[2].ofF()
 
-DigitalOutputDevice(2).off()
+sleep(4)
