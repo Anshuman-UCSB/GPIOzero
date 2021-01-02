@@ -3,6 +3,7 @@ from time import *
 import requests
 
 sensor = mpu6050(0x68)
+requests.delete("http://192.168.0.34:5000/")
 
 while True:
     gyro_data = sensor.get_gyro_data()
